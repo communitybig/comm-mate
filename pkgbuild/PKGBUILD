@@ -10,16 +10,28 @@ url="https://github.com/communitybig/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 depends=(
-  mate
-)
-optdepends=(
-  mate-extra
-  marco
-  mate-panel
+  mate-desktop
   mate-session-manager
+)
+
+optdepends=(
+  mate-control-center
+  mate-backgrounds
+  mate-control-center
+  mate-icon-theme
+  mate-menus
+  mate-notification-daemon
+  mate-panel
+  mate-polkit
+  mate-session-manager
+  mate-settings-daemon
+  mate-themes
+  mate-user-guide
+  mate-extra
   comm-base-config
-  mozo
   caja
+  marco
+  mozo
   pluma
   atril
   engrampa
