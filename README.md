@@ -1,3 +1,3 @@
-# pkgbuild-template-meta-package
+# comm-mate
 
-Template for meta packages
+Meta package for Mate

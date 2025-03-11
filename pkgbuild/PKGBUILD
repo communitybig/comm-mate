@@ -1,8 +1,7 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
-# Contributor: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=com-template
-pkgdesc="Meta package for comm-template"
+pkgname=com-mate
+pkgdesc="Meta package for Mate"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
 arch=('any')
@@ -11,10 +10,20 @@ url="https://github.com/communitybig/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 depends=(
-  bash              # coloque aqui o nome do teu principal pacote
+  mate
 )
 optdepends=(
-  bash-completion   # coloque aqui o nome dos outros pacotes que fazem parte do meta pacote (um abaixo do outro)
+  mate-extra
+  marco
+  mate-panel
+  mate-session-manager
+  comm-base-config
+  mozo
+  caja
+  pluma
+  atril
+  engrampa
+  #
 )
 
 # Automatically detect and use the correct install file
