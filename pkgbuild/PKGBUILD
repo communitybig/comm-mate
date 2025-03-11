@@ -1,6 +1,6 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
-pkgname=com-mate
+pkgname=comm-mate
 pkgdesc="Meta package for Mate"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
