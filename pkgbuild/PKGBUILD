@@ -127,6 +127,7 @@ optdepends=(
   # Office
   libreoffice-fresh-pt-br  # Portuguese (Brasil) language pack for LibreOffice Fresh
   eog                      # Eye of Gnome: An image viewing and cataloging program
+  simplescreenrecorder      # A feature-rich screen recorder that supports X11 and OpenGL
 )
 
 # Automatically detect and use the correct install file
