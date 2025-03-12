@@ -185,12 +185,14 @@ EOF
 			fi
 		else
 			msg "${green}Service ${service} is already inactive..."
+			continue
 		fi
 	done
 
 	for service in "${servicesToEnable[@]}"; do
 		if systemctl is-active --quiet "${service}"; then
 			msg "${green}Service ${service} is already active..."
+			continue
 		else
 			if ! systemctl enable ${service} &>/dev/null; then
 				msg "${red}Error: It went wrong when activating service ${service^}"
