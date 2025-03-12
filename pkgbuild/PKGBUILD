@@ -125,7 +125,8 @@ optdepends=(
   conky                    # Light-weight system monitor for X, Wayland, and other things, too
   conky-manager2           # GUI for managing Conky config files with options to browse and edit themes
   # Office
-  libreoffice-fresh-pt-br  #Portuguese (Brasil) language pack for LibreOffice Fresh
+  libreoffice-fresh-pt-br  # Portuguese (Brasil) language pack for LibreOffice Fresh
+  eog                      # Eye of Gnome: An image viewing and cataloging program
 )
 
 # Automatically detect and use the correct install file
