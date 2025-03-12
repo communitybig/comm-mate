@@ -178,15 +178,20 @@ EOF
 	fi
 
 	for service in "${servicesToDisable[@]}"; do
-    msg "Disabling service ${service}..."
-		if ! systemctl disable ${service} &>/dev/null; then
-			msg "${red}Error: It went wrong when desactivating service ${service^}"
-		fi
+	  if systemctl is-active --quiet "${service}"; then
+      msg "Disabling service ${service}..."
+		  if ! systemctl disable ${service} &>/dev/null; then
+			  msg "${red}Error: It went wrong when desactivating service ${service^}"
+		  fi
+    else
+      msg "Service ${service} is already inactive..."
+    fi
 	done
 
 	for service in "${servicesToEnable[@]}"; do
-    msg "Enabling service ${service}..."
-		if ! systemctl enable ${service} &>/dev/null; then
+	  if systemctl is-active --quiet "${service}"; then
+      msg "Service ${service} is already active..."
+		else ! systemctl enable ${service} &>/dev/null; then
 			msg "${red}Error: It went wrong when activating service ${service^}"
 		fi
 	done
