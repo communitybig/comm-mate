@@ -91,7 +91,9 @@ optdepends=(
   bigcontrolcenter-base    # Base para o Big Control Center, interface de gerenciamento do sistema.
   comm-webapps             # Integra aplicativos web ao ambiente de desktop.
   comm-restore-config      # Restaura configurações padrão de aplicativos de comunicação.
-  bigbashview             #BigBashView is a python app to run Bash+HTML in a Desktop WebView
+  iso2usb
+  chili-clonedisk
+  bigbashview              # BigBashView is a python app to run Bash+HTML in a Desktop WebView
   timeshift                # Ferramenta para criar snapshots incrementais do sistema.
   grub-btrfs-timeshift     # Integra o Timeshift ao GRUB em sistemas Btrfs.
   grub-btrfs               # Permite que o GRUB reconheça snapshots do Btrfs.
@@ -122,6 +124,8 @@ optdepends=(
   gvfs-wsdd                # Backend para descoberta de serviços Web Services Dynamic Discovery (Windows)
   conky                    # Light-weight system monitor for X, Wayland, and other things, too
   conky-manager2           # GUI for managing Conky config files with options to browse and edit themes
+  # Office
+  libreoffice-fresh-pt-br  #Portuguese (Brasil) language pack for LibreOffice Fresh
 )
 
 # Automatically detect and use the correct install file
