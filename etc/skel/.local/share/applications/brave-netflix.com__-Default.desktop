@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml_xml;
+Name=Netflix Watch TV Shows Online Watch Movies Online
+Exec=
+Icon=nficon2023-556858.png
+StartupWMClass=netflix.com
+Categories=Webapps;
+StartupNotify=false
+X-WebApp-Browser=brave
+X-WebApp-URL=https://netflix.com
