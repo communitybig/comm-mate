@@ -28,12 +28,15 @@ optdepends=(
   mate-themes
   mate-user-guide
   mate-extra
+  mate-power-manager
   caja
   marco
   mozo
   pluma
   atril
   engrampa
+  capitaine-cursors
+  beauty-icon-theme
   # Xorg
   xorg-server              # Servidor X11
   xorg-xinit               # Inicialização do Xorg
