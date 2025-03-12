@@ -215,6 +215,9 @@ EOF
 		update-grub &>/dev/null
 	fi
 
+  msg "Restauring pacman lock: /var/lib/pacman/db.lck"
+  touch /var/lib/pacman/db.lck &>/dev/null
+
 	if ! $IS_UPGRADE; then
 		msg "Installation complete. Rebooting in 10 seconds..."
 		# Countdown before reboot
