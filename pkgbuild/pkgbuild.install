@@ -21,7 +21,7 @@ declare IS_UPGRADE=false
 declare WM='mate'
 declare DM='lightdm'
 declare pkgname=comm-"${WM}"
-declare servicesToEnable=(avahi-daemon ssh cups)
+declare servicesToEnable=(avahi-daemon sshd cups)
 declare servicesToDisable=()
 
 msg() {
@@ -181,7 +181,7 @@ EOF
 		if systemctl is-active --quiet "${service}"; then
 			msg "Disabling service ${service}..."
 			if ! systemctl disable ${service} &>/dev/null; then
-				msg "${red}Error: It went wrong when desactivating service ${service^}"
+				msg "${red}Error: It went wrong when desactivating service ${service}"
 			fi
 		else
 			msg "${green}Service ${service} is already inactive..."
@@ -195,7 +195,7 @@ EOF
 			continue
 		else
 			if ! systemctl enable ${service} &>/dev/null; then
-				msg "${red}Error: It went wrong when activating service ${service^}"
+				msg "${red}Error: It went wrong when activating service ${service}"
 			fi
 		fi
 	done
