@@ -111,24 +111,29 @@ optdepends=(
   gnome-disk-utility       # Utilitário gráfico para gerenciar discos e dispositivos de armazenamento.
 
   # GVFS - Sistema de arquivos virtual
-  gvfs                     # Implementação do sistema de arquivos virtual para GIO
-  gvfs-afc                 # Backend para dispositivos móveis da Apple (AFC)
-  gvfs-dnssd               # Backend para DNS-SD e WebDAV (compartilhamento macOS)
-  gvfs-goa                 # Backend para Gnome Online Accounts (OwnCloud, etc.)
-  gvfs-google              # Backend para Google Drive
-  gvfs-gphoto2             # Backend para câmeras PTP e dispositivos MTP
-  gvfs-mtp                 # Backend para dispositivos MTP (Android, media players)
-  gvfs-nfs                 # Backend para NFS
-  gvfs-onedrive            # Backend para Microsoft OneDrive
-  gvfs-smb                 # Backend para compartilhamento de arquivos SMB/CIFS (Windows)
-  gvfs-wsdd                # Backend para descoberta de serviços Web Services Dynamic Discovery (Windows)
-  conky                    # Light-weight system monitor for X, Wayland, and other things, too
-  conky-manager2           # GUI for managing Conky config files with options to browse and edit themes
+  gvfs                      # Implementação do sistema de arquivos virtual para GIO
+  gvfs-afc                  # Backend para dispositivos móveis da Apple (AFC)
+  gvfs-dnssd                # Backend para DNS-SD e WebDAV (compartilhamento macOS)
+  gvfs-goa                  # Backend para Gnome Online Accounts (OwnCloud, etc.)
+  gvfs-google               # Backend para Google Drive
+  gvfs-gphoto2              # Backend para câmeras PTP e dispositivos MTP
+  gvfs-mtp                  # Backend para dispositivos MTP (Android, media players)
+  gvfs-nfs                  # Backend para NFS
+  gvfs-onedrive             # Backend para Microsoft OneDrive
+  gvfs-smb                  # Backend para compartilhamento de arquivos SMB/CIFS (Windows)
+  gvfs-wsdd                 # Backend para descoberta de serviços Web Services Dynamic Discovery (Windows)
+  conky                     # Light-weight system monitor for X, Wayland, and other things, too
+  conky-manager2            # GUI for managing Conky config files with options to browse and edit themes
+  plank                     # Elegant, simple, clean dock
+  brisk-menu                # Modern, efficient menu for the MATE Desktop Environment
   # Office
   libreoffice-fresh-pt-br # Portuguese (Brasil) language pack for LibreOffice Fresh
   eog                     # Eye of Gnome: An image viewing and cataloging program
   simplescreenrecorder    # A feature-rich screen recorder that supports X11 and OpenGL
   mate-tweak              # Tweak tool for MATE (fork of MintDesktop)
+  adapta-gtk-theme        # An adaptive Gtk+ theme based on Material Design Guideline
+  arc-gtk-theme           # A flat theme with transparent elements for GTK 2,3,4 and Gnome-Shell
+  arc-icon-theme          # Arc icon theme. Official releases only
 )
 
 # Automatically detect and use the correct install file
