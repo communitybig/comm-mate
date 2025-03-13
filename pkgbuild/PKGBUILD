@@ -70,6 +70,9 @@ optdepends=(
   pavucontrol              # Controle de volume para PulseAudio
   pipewire                 # Alternativa moderna ao PulseAudio para áudio
   wireplumber              # Gerenciador de sessão para PipeWire
+  pipewire-pulse           # Low-latency audio/video router and processor - PulseAudio replacement
+  pipewire-alsa            # Low-latency audio/video router and processor - ALSA configuration
+  pipewire-jack            # Low-latency audio/video router and processor - JACK replacement
 
   # Interface gráfica e login
   #lxdm                     # Gerenciador de login leve e rápido, usado principalmente no LXDE.
