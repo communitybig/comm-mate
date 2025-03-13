@@ -6,6 +6,8 @@
   "pane_position" : "300",
   "window_width" : "600",
   "window_height" : "500",
-  "startup_delay" : "20",
-  "search-locations" : []
+  "startup_delay" : "10",
+  "search-locations" : [
+    "~/.config/conky"
+  ]
 }

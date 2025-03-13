@@ -108,7 +108,7 @@ optdepends=(
   bigocrpdf                # Converte documentos PDF em texto editável via OCR.
   bluez-cups               # Permite impressão via Bluetooth usando o BlueZ.
   paru                     # AUR helper para instalação de pacotes do Arch User Repository.
-  nautilus                 # Gerenciador de arquivos do GNOME.
+  #nautilus                 # Gerenciador de arquivos do GNOME.
   ecrire                   # Processador de texto leve.
   evisum                   # Ferramenta para visualização e análise de dados científicos.
   gnome-disk-utility       # Utilitário gráfico para gerenciar discos e dispositivos de armazenamento.
@@ -137,6 +137,7 @@ optdepends=(
   adapta-gtk-theme        # An adaptive Gtk+ theme based on Material Design Guideline
   arc-gtk-theme           # A flat theme with transparent elements for GTK 2,3,4 and Gnome-Shell
   arc-icon-theme          # Arc icon theme. Official releases only
+  vlc                     # Multi-platform MPEG, VCD/DVD, and DivX player
 )
 
 # Automatically detect and use the correct install file

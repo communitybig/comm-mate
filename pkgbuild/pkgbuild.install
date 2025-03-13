@@ -163,12 +163,14 @@ EOF
 	msg "Setting user folder permissions in ${user_home}"
 	chown -R "$user:$user" "$user_home" &>/dev/null
 
-	msg "Configuring Nautilus..."
-	if glib-compile-schemas /usr/share/glib-2.0/schemas/; then
-		msg "Nautilus schemas compiled successfully!"
-	else
-		msg "${yellow}Warning: Failed to compile Nautilus schemas. Some features may not work correctly.${reset}"
-	fi
+  if command -v nautilus >/dev/null; then
+  	msg "Configuring Nautilus..."
+  	if glib-compile-schemas /usr/share/glib-2.0/schemas/; then
+	  	msg "Nautilus schemas compiled successfully!"
+  	else
+  		msg "${yellow}Warning: Failed to compile Nautilus schemas. Some features may not work correctly.${reset}"
+  	fi
+  fi
 
 	if ! $IS_UPGRADE; then
 		msg "Enabling ${DM^}..."
