@@ -139,6 +139,7 @@ optdepends=(
   arc-gtk-theme           # A flat theme with transparent elements for GTK 2,3,4 and Gnome-Shell
   arc-icon-theme          # Arc icon theme. Official releases only
   vlc                     # Multi-platform MPEG, VCD/DVD, and DivX player
+  ttf-fira-mono
 )
 
 # Automatically detect and use the correct install file
