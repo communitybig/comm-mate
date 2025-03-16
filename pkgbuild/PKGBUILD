@@ -77,7 +77,7 @@ optdepends=(
   # Extras para Wayland
   #waybar                   # Barra de status alternativa para Wayland
   firefox                  # Navegador web popular e de código aberto, focado na privacidade e segurança.
-  brave-browser            # Navegador baseado no Chromium, focado na privacidade, bloqueio de anúncios e velocidade.
+  #brave-browser            # Navegador baseado no Chromium, focado na privacidade, bloqueio de anúncios e velocidade.
   # Pacotes da comunidade
   comm-base-config
   auto-tweaks-browser      # Aplica ajustes automáticos ao navegador para otimizar seu desempenho e funcionalidade.
