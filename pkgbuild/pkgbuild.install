@@ -71,12 +71,13 @@ sh_restoring_lock() {
 sh_check_package_exist() {
 	local pkg
 	for pkg in "${OPTDEPENDS[@]}"; do
-		if ! pacman -Ss "^$pkg$" &>/dev/null; then
-		  die "Fatal: package '$pkg' not exist in repo"
-		else
-      log_ok "Check: ${cyan}$pkg"
+    if ! pacman -Qs "$pkg" &>/dev/null; then
+  		if ! pacman -Ss "^$pkg$" &>/dev/null; then
+	  	  die "Fatal: package '$pkg' not exist in repo"
+		  fi
 		fi
-	done
+    log_ok "Check: ${cyan}$pkg"
+  done
 }
 
 sh_start_dbus_in_chroot() {
