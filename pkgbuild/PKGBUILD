@@ -161,7 +161,6 @@ optdepends=(
   xf86-video-voodoo       # X.org 3dfx Voodoo1/Voodoo2 2D video driver
   lib32-libxxf86vm        # X11 XFree86 video mode extension library (32-bit)
   xf86-video-sis          # X.org SiS video driver
-  vilmar
 )
 
 # Automatically detect and use the correct install file
