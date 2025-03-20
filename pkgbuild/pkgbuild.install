@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
+# shellcheck source=/dev/null
 
 export TERM=${TERM:-xterm}
 export TERM=${TERM:-xterm-256color}
@@ -31,12 +32,16 @@ declare IS_UPGRADE=false
 declare DM='lightdm'
 declare WM='mate'
 declare pkgname=comm-"${WM}"
-declare servicesToEnable=(${DM} avahi-daemon sshd cups bluetooth)
+declare servicesToEnable=("${DM}" avahi-daemon sshd cups bluetooth)
 declare servicesToDisable=(lxdm sddm gdm)
 
 msg() {
 	local msg="$1"
 	echo -e "${green}==>[${pkgname}] ${bold}${yellow}${msg}${reset}" >&2
+}
+
+log_msg() {
+  echo -e "  ${TICK} ${*}${reset}"
 }
 
 die() {
@@ -69,6 +74,8 @@ sh_check_package_exist() {
 	for pkg in "${OPTDEPENDS[@]}"; do
 		if ! pacman -Ss "^$pkg$" &>/dev/null; then
 			die "Fatal: package '$pkg' not exist"
+		else
+      log_msg "Check: ${cyan}$pkg"
 		fi
 	done
 }
@@ -218,7 +225,7 @@ EOF
 	for service in "${servicesToDisable[@]}"; do
 		if systemctl is-active --quiet "${service}"; then
 			msg "Disabling service ${service}..."
-			if ! systemctl disable ${service} &>/dev/null; then
+			if ! systemctl disable "${service}" &>/dev/null; then
 				msg "${red}Error: It went wrong when desactivating service ${service}"
 			fi
 		else
@@ -232,7 +239,7 @@ EOF
 			msg "${green}Service ${service} is already active..."
 			continue
 		else
-			if ! systemctl enable ${service} &>/dev/null; then
+			if ! systemctl enable "${service}" &>/dev/null; then
 				msg "${red}Error: It went wrong when activating service ${service}"
 			fi
 		fi
@@ -254,8 +261,6 @@ EOF
 		msg "Generating GRUB configuration files..."
 		update-grub &>/dev/null
 	fi
-
-  () {
 
   # Restauring pacman lock: /var/lib/pacman/db.lck
   sh_restoring_lock
