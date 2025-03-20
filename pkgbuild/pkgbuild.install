@@ -40,9 +40,8 @@ msg() {
 	echo -e "${green}==>[${pkgname}] ${bold}${yellow}${msg}${reset}" >&2
 }
 
-log_msg() {
-  echo -e "  ${TICK} ${*}${reset}"
-}
+log_ok() {  echo -e "  ${TICK} ${*}${reset}"; }
+log_err() { echo -e "  ${CROSS} ${*}${reset}"; }
 
 die() {
 	local msg=$1
@@ -73,9 +72,9 @@ sh_check_package_exist() {
 	local pkg
 	for pkg in "${OPTDEPENDS[@]}"; do
 		if ! pacman -Ss "^$pkg$" &>/dev/null; then
-			die "Fatal: package '$pkg' not exist"
+		  die "Fatal: package '$pkg' not exist in repo"
 		else
-      log_msg "Check: ${cyan}$pkg"
+      log_ok "Check: ${cyan}$pkg"
 		fi
 	done
 }
