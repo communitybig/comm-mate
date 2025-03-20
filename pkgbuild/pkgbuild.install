@@ -40,6 +40,15 @@ sh_load_optdepends() {
 	fi
 }
 
+sh_check_package_exist() {
+  local pkg
+  for pkg in "${OPTDEPENDS[@]}"; do
+    if ! pacman -Ss "^$pkg$"; then
+      die "Fatal: package '$pkg' not exist"
+    fi
+  done
+}
+
 sh_start_dbus_in_chroot() {
 	# Verifica se o D-Bus já está em execução
 	if ! pgrep -x "dbus-daemon" >/dev/null; then
@@ -97,6 +106,9 @@ post_install() {
 
 	msg "Installing common packages: ${COMMON_PACKAGES[*]}"
 	install_packages "${COMMON_PACKAGES[@]}"
+
+	msg "Checking for the existence of packages..."
+  sh_check_package_exist
 
 	msg "Installing optdepends packages: ${OPTDEPENDS[*]}"
 	install_packages "${OPTDEPENDS[@]}"
