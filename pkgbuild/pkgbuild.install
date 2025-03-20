@@ -44,6 +44,7 @@ die() {
 	shift
 	#printf "  %b %s\\n" "${CROSS}" "${red}${msg}${reset}"
 	echo -e "  ${CROSS} ${red}${msg}${reset}"
+  sh_restoring_lock
 	exit 1
 }
 
@@ -56,6 +57,11 @@ sh_load_optdepends() {
 		msg "${red}FATAL: Something went wrong! File '$info_file' not found or without read permission."
 		msg "${red}FATAL: Something went wrong! File '$info_file' not found or without read permission."
 	fi
+}
+
+sh_restoring_lock() {
+  msg "Restauring pacman lock: /var/lib/pacman/db.lck"
+  touch /var/lib/pacman/db.lck &>/dev/null
 }
 
 sh_check_package_exist() {
@@ -249,8 +255,10 @@ EOF
 		update-grub &>/dev/null
 	fi
 
-	msg "Restauring pacman lock: /var/lib/pacman/db.lck"
-	touch /var/lib/pacman/db.lck &>/dev/null
+  () {
+
+  # Restauring pacman lock: /var/lib/pacman/db.lck
+  sh_restoring_lock
 
 	if ! $IS_UPGRADE; then
 		msg "Installation complete. Rebooting in 10 seconds..."
