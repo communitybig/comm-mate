@@ -69,23 +69,34 @@ sh_restoring_lock() {
 }
 
 sh_check_package_exist() {
-	local not_installed=()
+  local pkg
+  local not_installed=()
+  local not_found=()
 
-	# Verifica pacotes instalados localmente de uma só vez
-	mapfile -t not_installed < <(comm -23 <(printf "%s\n" "${OPTDEPENDS[@]}" | sort) <(pacman -Qq "${OPTDEPENDS[@]}" 2>/dev/null | sort))
+  # Verifica pacotes instalados localmente de uma vez
+  for pkg in "${OPTDEPENDS[@]}"; do
+    if ! pacman -Qq "$pkg" &>/dev/null; then
+      not_installed+=("$pkg")
+    fi
+  done
 
-	# Verifica pacotes ausentes nos repositórios de uma só vez
-	if ((${#not_installed[@]})); then
-		mapfile -t missing < <(comm -23 <(printf "%s\n" "${not_installed[@]}" | sort) <(pacman -Ssq "${not_installed[@]}" 2>/dev/null | sort))
+  # Verifica pacotes ausentes no repositório de uma vez
+  if ((${#not_installed[@]})); then
+    for pkg in "${not_installed[@]}"; do
+      if ! pacman -Ssq "^$pkg$" &>/dev/null; then
+        not_found+=("$pkg")
+      fi
+    done
+  fi
 
-		if ((${#missing[@]})); then
-			die "Fatal: os seguintes pacotes não existem no repositório: ${missing[*]}"
-		fi
-	fi
+  # Se houver pacotes não encontrados, exibe erro
+  if ((${#not_found[@]})); then
+    die "Fatal: os seguintes pacotes não existem no repositório: ${not_found[*]}"
+  fi
 
-	for pkg in "${OPTDEPENDS[@]}"; do
-		log_ok "Check: ${cyan}$pkg"
-	done
+  for pkg in "${OPTDEPENDS[@]}"; do
+    log_ok "Check: ${cyan}$pkg"
+  done
 }
 
 sh_start_dbus_in_chroot() {
