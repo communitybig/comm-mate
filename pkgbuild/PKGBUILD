@@ -78,16 +78,6 @@ optdepends=(
   #waybar                   # Barra de status alternativa para Wayland
   firefox                  # Navegador web popular e de código aberto, focado na privacidade e segurança.
   #brave-browser            # Navegador baseado no Chromium, focado na privacidade, bloqueio de anúncios e velocidade.
-  # Pacotes da comunidade
-  comm-base-config
-  auto-tweaks-browser      # Aplica ajustes automáticos ao navegador para otimizar seu desempenho e funcionalidade.
-  big-store                # Gerenciador de grandes volumes de dados.
-  bigcontrolcenter-base    # Base para o Big Control Center, interface de gerenciamento do sistema.
-  comm-webapps             # Integra aplicativos web ao ambiente de desktop.
-  comm-restore-config      # Restaura configurações padrão de aplicativos de comunicação.
-  #chili-utils
-  #chili-iso2usb
-  #chili-clonedisk
   bigbashview              # BigBashView is a python app to run Bash+HTML in a Desktop WebView
   timeshift                # Ferramenta para criar snapshots incrementais do sistema.
   grub-btrfs-timeshift     # Integra o Timeshift ao GRUB em sistemas Btrfs.
@@ -163,6 +153,14 @@ optdepends=(
   xf86-video-sis          # X.org SiS video driver
   gnome-disk-utility
   gparted
+  # Pacotes da comunidade
+  comm-base-config
+  auto-tweaks-browser      # Aplica ajustes automáticos ao navegador para otimizar seu desempenho e funcionalidade.
+  big-store                # Gerenciador de grandes volumes de dados.
+  bigcontrolcenter-base    # Base para o Big Control Center, interface de gerenciamento do sistema.
+  comm-webapps             # Integra aplicativos web ao ambiente de desktop.
+  comm-restore-config      # Restaura configurações padrão de aplicativos de comunicação.
+  #chili-iso2usb
   chili-install
   chili-clonedisk
   chili-utils
